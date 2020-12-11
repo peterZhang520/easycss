@@ -2,9 +2,11 @@
     "name": "root",
     "private": true,
     "devDependencies": {
-        "lerna": "^3.22.1"
+        "lerna": "^3.22.1",
+        "plop": "^2.7.4"
     },
     "scripts": {
-        "lerna": "lerna publish"
+        "lerna": "lerna publish",
+        "plop": "plop"
     }
 }
