@@ -3,7 +3,6 @@ module.exports = (plop) => {
     description: 'create a custom component',
     // 模板名称
     // 命令行提问模块工具
-    // array of inquirer prompts
     prompts: [
       {
         name: 'name',
@@ -11,39 +10,34 @@ module.exports = (plop) => {
         message: 'component name',
         default: 'MyComponent',
       },
+
       {
         name: 'cptType',
-        type: 'input',
-        message: 'chioce a template type',
-        default: 'plugin',
+        type: 'multiselect',
+        message: 'chioce only one ',
+        instructions: false,
+        choices: [
+          { title: 'component', value: 'component'},
+          { title: 'plugins', value: 'plugins' },
+        ],
       },
-
-      //   {
-      //     name: 'cptType',
-      //     type: 'multiselect',
-      //     message: 'chioce only one ',
-      //     instructions: false,
-      //     choices: [{ default: 'component' }, { default: 'plugins' }]
-      //   },
     ],
     // 所有模板文件
     actions: [
       {
         type: 'add',
         path: 'packages/{{name}}/src/{{name}}.vue',
-        templateFile: 'plop-template/{{cptType}}/src/{{cptType}}.hbs',
+        templateFile: 'plop-template/{{cptType}}/src/component.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{name}}/__tests__/{{name}}.test.js',
-        templateFile:
-          'plop-template/{{cptType}}/__tests__/{{cptType}}.test.hbs',
+        templateFile: 'plop-template/{{cptType}}/__tests__/component.test.hbs',
       },
       {
         type: 'add',
         path: 'packages/{{name}}/stories/{{name}}.stories.js',
-        templateFile:
-          'plop-template/{{cptType}}/stories/{{cptType}}.stories.hbs',
+        templateFile: 'plop-template/{{cptType}}/stories/component.stories.hbs',
       },
       {
         type: 'add',

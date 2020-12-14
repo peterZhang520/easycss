@@ -23,7 +23,7 @@ module.exports = (plop) => {
       //     type: 'multiselect',
       //     message: 'chioce only one ',
       //     instructions: false,
-      //     choices: [{ default: 'component' }, { default: 'plugins' }]
+      //     choices: [{ default: 'component' }, { default: 'plugins' }],
       //   },
     ],
     // 所有模板文件
